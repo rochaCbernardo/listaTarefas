@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task List</title>
+</head>
+<body>
+    {% extends "template.html" %}
+    {% block content %}
+
+    {%with messages = get_flashed_messages()%}
+    {%if messages%}
+    {% for message in messages %}
+    <div class="alert alert-success alert-dismissable" role="alert" id="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        {{message}}
+    </div>
+    {%endfor%}
+    {%endif%}
+    {%endwith%}
+    <div class="container my-5">
+    
+    <table class="table table-bordered table-hover container">
+        <thead class="thead-dark">
+            <tr>
+                <th>Código da Tarefa</th>
+                <th>Título da Tarefa</th>
+                <th>Proprietário</th>
+                <th>Data de criação</th>
+                <th>Data de modificação</th>
+                <th>Descrição</th>
+                <th>Status</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in taskList %}
+            <tr>
+                <td>{{row.0}}</td>
+                <td>{{row.1}}</td>
+                <td>{{row.2}}</td>
+                <td>{{row.3}}</td>
+                <td>{{row.4}}</td>
+                <td>{{row.5}}</td>
+                <td>{{row.6}}</td>
+                <td>
+                    <a href="/{{row.0}}" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modaledit{{row.0}}">Atualizar</a>
+                </td>
+                <td>
+                    <a href="/delete/{{row.0}}" class="btn btn-danger btn-sm">Excluir</a>
+                </td>
+            </tr>
+
+            <div id="modaledit{{row.0}}" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+           
+                        <div class="modal-header">
+                            <h5 class="modal-title text-primary" style="align-content: center;">Atualizar tarefa</h5>    
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          
+                        <div class="modal-body">
+                            
+                            <form action="{{ url_for('rota.home')}}" method="POST">
+                                <input type="hidden" name="taskCod" value="{{row.0}}">
+                                <div class="row my-2">
+                                  <div class="col-12 mx-auto">
+                                    <label class="form-label">Título da tarefa</label>
+                                    <input value="{{row.1}}" class="form-control" type="text" name="taskTitle" id="taskTitle" />
+                                  </div>
+                                </div>
+                                <div class="row my-2">
+                                  <div class="col-12 col-lg">
+                                    <label class="form-label">Proprietário</label>
+                                    <input value="{{row.2}}" class="form-control" type="text" name="ownerName" id="ownerName" />
+                                  </div>
+                                  <div class="col-12 col-lg">
+                                    <label class="form-label">Status</label>
+                                        <select class="form-control" type="text" name="taskStatus" id="taskStatus">
+                                            <option value="Em andamento">Em andamento</option>
+                                            <option value="Concluída">Concluída</option>
+                                            <option value="Cancelada">Cancelada</option>
+                                        </select>
+                                  </div>
+                                  <div class="col-12 mx-auto">
+                                    <label class="form-label">Descrição</label>
+                                    <textarea class="form-control" type="text" name="taskDescription" id="taskDescription" rows="4" cols="50">{{row.5}}</textarea>
+                                  </div>
+                                </div>
+                                <button type="submit" class="btn btn-success mb-2">Atualizar</button>
+                              </form>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+    {% endblock %}
+</body>
+</html>

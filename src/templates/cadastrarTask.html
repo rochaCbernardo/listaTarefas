@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskList</title>
+</head>
+<body>
+    {% extends "template.html" %}
+    {% block content %}
+  
+      <div class="container">
+        <form method="POST" action="{{url_for('rota.cadastrarTask')}}" class="col-12 col-lg-8 col-xl-6 mx-auto ">
+          <div class="row my-2">
+            <div class="col-12 mx-auto">
+              <h1 class="display-5">Cadastro de tarefa</h1>
+              <hr>
+            </div>
+          </div>
+          <div class="row my-2">
+            <div class="col-6 mx-auto">
+              <label class="form-label">Título da tarefa</label>
+              <input class="form-control" type="text" name="taskTitle" id="taskTitle" />
+            </div>
+            <div class="col-6 col-mx">
+              <label class="form-label">Proprietário</label>
+              <input class="form-control" type="text" name="ownerName" id="ownerName" />
+            </div>
+            <div class="col-12 col-lg">
+              <label class="form-label">Descrição</label>
+              <textarea class="form-control" type="text" name="taskDescription" id="taskDescription" rows="4" cols="50"></textarea>
+            </div>
+          <div class="row my-2">
+            <div class="col-form-label col-12 mx-auto">
+              <input class="btn btn-success my-3" type="submit" value="Cadastrar..." />
+            </div>
+          </div>
+        </form>
+      </div>
+       
+    {% endblock %}
+</body>
+</html>
