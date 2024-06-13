@@ -58,9 +58,9 @@ class ControllerTaskList:
             mysql.cursor.execute(excluir)
             mysql.conexao.commit()
 
-            return flash("Doador excluído com sucesso!")
+            return flash("Tarefa excluida com sucesso!")
         except:
-            return flash("Ocorreu um erro ao excluir doador, tente novamente.")
+            return flash("Ocorreu um erro ao excluir tarefa, tente novamente.")
 
     def listarDoadores() -> TaskList:
         mysql = ConexionMysql()
