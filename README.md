@@ -1,6 +1,6 @@
 # listaTarefas
-Sistema composto por uma tabela em que são armazenados dados de tarefas;
-Sistema criado na linguagem python, sendo utilizada a biblioteca flask para integração da linguagem com o banco de daos e a web;
+Sistema composto por uma tabela em que são armazenados dados de tarefas.
+Sistema criado na linguagem python, sendo utilizada a biblioteca flask para integração da linguagem com o banco de daos e a web.
 
 ##Organização:
 -[main](main.py): Nesse arquivo consta o executável do app criado, ele conecta as demais pastas e arquivos;
