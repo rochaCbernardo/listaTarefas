@@ -45,4 +45,9 @@ Sistema criado na linguagem python, sendo utilizada a biblioteca flask para inte
 
 ## Telas do app:
 
-
+* Tela principal:
+ <img src="/telasApp/tela1.jpeg">
+* Tela de cadastro:
+ <img src="/telasApp/tela2.jpeg">
+* Tela de atualização:
+<img src="/telasApp/tela3.jpeg">
