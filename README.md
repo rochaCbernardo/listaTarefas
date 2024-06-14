@@ -42,3 +42,7 @@ Sistema criado na linguagem python, sendo utilizada a biblioteca flask para inte
   * [templates](src/templates): Nesse repositórico encontram-se os arquivos .html utilizados para criação das páginas web.
   * [static](src/static): Nesse repositório encontra-se o arquivo .css utilizado para estilizar as páginas web criadas.
   * [init.py](src/init.py): Nesse arquivo é feita a ligação da biblioteca flask, do python, com o banco de dados MySQL e as rotas.
+
+## Telas do app:
+
+
