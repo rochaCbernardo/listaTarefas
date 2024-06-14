@@ -49,7 +49,7 @@ Sistema criado na linguagem python, sendo utilizada a biblioteca flask para inte
  <img src="/telasApp/tela1.jpeg">
  
 * Tela de cadastro:
- <img src="/telasApp/tela2.jpeg">
+ <img src="/telasApp/tela3.jpeg">
  
 * Tela de atualização:
-<img src="/telasApp/tela3.jpeg">
+<img src="/telasApp/tela2.jpeg">
